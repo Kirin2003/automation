@@ -108,10 +108,10 @@ def generate_straight_obs(num):
         
         theta = random.uniform(-3.14, 3.14)
         length,width,height,speed=check_obs_type("VEHICLE") 
-        position = [routing["start_x"], routing["start_y"], 0.0]
+        position = [routing["start"]["x"], routing["start"]["y"], 0.0]
         trace = []
-        trace.append([routing["start_x"], routing["start_y"], 0.0])
-        trace.append([routing["end_x"], routing["end_y"], 0.0])
+        trace.append([routing["start"]["x"], routing["start"]["y"], 0.0])
+        trace.append([routing["end"]["x"], routing["end"]["y"], 0.0])
         straight_desc = generate_obs_desc(unique_obs_id, position, theta, length, width, height, speed, 1.0, "VEHICLE", trace)
         
         
@@ -140,8 +140,8 @@ def generate_pedestrian_obs(num):
         theta = random.uniform(-3.14, 3.14)
         length,width,height,speed=check_obs_type("PEDESTRIAN") 
         
-        pos_x = random.uniform(routing["park_start_x"], routing["park_end_x"])
-        pos_y = random.uniform(routing["park_start_y"], routing["park_end_y"])
+        pos_x = random.uniform(routing["park_start"]["x"], routing["park_end"]["x"])
+        pos_y = random.uniform(routing["park_start"]["y"], routing["park_end"]["y"])
         position = [pos_x, pos_y, 0.0]
 
         if speed == 0.0:

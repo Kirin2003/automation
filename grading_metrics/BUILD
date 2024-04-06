@@ -34,6 +34,17 @@ py_binary(
 )
 
 py_binary(
+	name = "speed",
+	srcs = ["speed.py"],
+	deps = [
+		"//automation/auxiliary/record:read_record",
+		"//automation/auxiliary/map:map_tools",
+		"//automation/grading_metrics:collision",
+		"//automation/auxiliary/oracles:speeding",
+	],
+)
+
+py_binary(
 	name = "run_oracles",
 	srcs = ["run_oracles.py"],
 	deps = [

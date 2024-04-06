@@ -11,3 +11,13 @@ py_binary(
         "//modules/routing/proto:routing_py_pb2",
     ],         
 )
+
+py_binary(
+    name = "mock_routing_request",
+    srcs = ["mock_routing_request.py"],
+    deps = [
+        "//cyber/python/cyber_py3:cyber",
+        "//cyber/python/cyber_py3:cyber_time",
+        "//modules/routing/proto:routing_py_pb2",
+    ],         
+)

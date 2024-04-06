@@ -35,6 +35,11 @@ py_binary(
 )
 
 py_binary(
+   name = "gen_random",
+   srcs = ["gen_random.py"],
+)
+
+py_binary(
    name = "autoT",
    srcs = ["autoT.py"],
    deps = [
